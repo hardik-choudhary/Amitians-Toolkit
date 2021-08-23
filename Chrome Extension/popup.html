@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Hi there</title>
+		<style>
+			*{
+				margin: 0;
+				box-sizing: border-box;
+			}
+		</style>
+    </head>
+    <body style="width:350px;padding: 20px;margin: 0;">
+        <h1>Hello! Amitians</h1>
+
+        <p style="font-size: 15px;">Open Amizon, go to My faculty page, open the faculty feedback form, Wait for 1 second. It will be filled and submitted automatically!! || Try refreshing if not working</p>
+		
+		<form>
+			<div style="margin-top: 10px; border-top:1px solid #000; border-bottom:1px solid #000;">
+				<p style="font-size: 14px;">Faculty Feedback Details</p>
+				<div style="margin-top: 5px;">
+					<label><strong>Feedback Rating *</strong></label>
+					<div>
+						<select id="tt_rating" style="width:100%;padding:3px 0;">
+							<option value="5">Strongly Agree</option>
+							<option value="4">Agree</option>
+							<option value="3">Neutral</option>
+							<option value="2">Disagree</option>
+							<option value="1">Strongly Disagree</option>
+						</select>
+					</div>
+				</div>
+				<div style="margin: 10px 0 7px;">
+					<label><strong>Your Comments *</strong></label>
+					<div>
+						<textarea id="tt_comment" style="width:100%;" rows="3"></textarea>
+					</div>
+				</div>
+			</div>
+			<div style="margin-top: 10px; border-bottom:1px solid #000;">
+				<p style="font-size: 14px;">Amizone Auto Login Details (Leave Blank to Disable Auto login)</p>
+				<div style="margin-top: 5px;">
+					<label><strong>Username</strong></label>
+					<div>
+						<input type="text" id="tt_aUsername" placeholder="Amizone Username" style="width:100%;padding:3px 0;">
+					</div>
+				</div>
+				<div style="margin: 10px 0;">
+					<label><strong>Password</strong></label>
+					<div>
+						<input type="password" id="tt_aPassword" placeholder="Amizone Password" style="width:100%;padding:3px 0;">
+					</div>
+				</div>
+			</div>
+			
+			<div style="margin-top: 10px;">
+				<button id="tt_save" style="width:100%;padding:5px 0;">Save</button>
+			</div>
+			<div id="tt_data_saved" style="display: none; margin-top: 10px;text-align: center;color:green;font-weight:bold;">
+				Data Saved Successfully
+			</div>
+			
+			
+		</form>
+		
+        <div style="margin-top: 10px;text-align: center">
+			<h4>Don't forget to say thanks to Hardik Choudhary</h4>
+			<a href="https://thintake.in?ref=amizon-feedback" target="_blank" style="font-size:12px;">ThinTake</a>
+		</div>
+		<p style="font-size: 15px; color:red;">All data will be stored on your device locally. Nothing will be shared.</p>
+		<script src="popup.js"></script>
+    </body>
+</html> 
