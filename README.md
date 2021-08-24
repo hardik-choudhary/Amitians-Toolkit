@@ -18,8 +18,8 @@ FAQ:
 How to Use Push to Talk?
  - First Enable Push to Talk from menu then just press and hold the space bar to unmute, then lift your finger to mute again.
 
-How to Use Push to Talk?
- - First Enable Push to Talk from menu then just press and hold the space bar to unmute, then lift your finger to mute again.
+How to Use Picture-in-Picture Mode?
+ - Upon Joining Teams, you'll be a PIP option on the Menu Bar, click/press it to enable the PIP mode
 
 How to disable Auto Login?
  - Just remove your username password from extension settings and it will be disabled automatically
