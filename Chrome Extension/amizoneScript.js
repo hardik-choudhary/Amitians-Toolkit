@@ -1,13 +1,19 @@
 console.log("Amitians Toolkit Running...");
 function fillForm(data) {
 	var i;
-	for (i = 1; i <= 25; i++){
-	  document.querySelector(`.ace[id="${i}"][value="${data.tt_rating}"]`).click();
-	} 
+	for (i = 1; i <= 30; i++){
+		var radioBtn = document.querySelector(`.ace[id="${i}"][value="${data.tt_rating}"]`);
+		if(radioBtn != null){
+			radioBtn.click();
+		}
+	}
 	
-	document.querySelector('#rdbQuestion1.ace[value="1"]').click();
-	document.querySelector('#rdbQuestion2.ace[value="1"]').click();
-	document.querySelector('#rdbQuestion3.ace[value="1"]').click();
+	for (i = 1; i <= 7; i++){
+		var radioBtn = document.querySelector(`#rdbQuestion${i}.ace[value="1"]`);
+		if(radioBtn != null){
+			radioBtn.click();
+		}
+	}
 
 	document.querySelector('#FeedbackRating_Comments').value = data.tt_comment;
 	
@@ -15,7 +21,7 @@ function fillForm(data) {
 	
 	console.log('Kam ho gaya!!');
 	setTimeout(function(){
-		StartInterval();
+		startInterval();
 	}, 1000);
 	
 };
@@ -35,11 +41,17 @@ function startInterval(){
 	console.log('Interval Started');
 	interval = setInterval(function(){
 		intervalRunning = true;
-		if(document.querySelector('#FeedbackRating_Comments')){
-			clearInterval(interval);
+		if(document.querySelector('#FeedbackRating_Comments') && document.querySelector('#FeedbackRating_Comments').value.length <= 0){
+			stopInterval();
 			start();
 		}
 	}, 500);
+}
+
+function stopInterval(){
+	console.log('Interval Ended');
+	clearInterval(interval);
+	intervalRunning = false;
 }
 
 function showNotice(){
@@ -62,9 +74,11 @@ var AmizoneHomeUrls = ["http://s.amizone.net/Home", "https://s.amizone.net/Home"
 var AmizoneLoginUrls = ["http://s.amizone.net", "https://s.amizone.net", "http://s.amizone.net/", "https://s.amizone.net/"];
 window.addEventListener("load", function(){
 	showNotice();
+	
 	window.addEventListener("contextmenu", function(e){
 		e.stopPropagation();
 	}, true);
+	
 	if(AmizoneHomeUrls.includes(location.href)){
 		document.querySelectorAll(".nav.nav-list a").forEach(function(item){
 			item.addEventListener('click', function(event) {
@@ -72,9 +86,7 @@ window.addEventListener("load", function(){
 					startInterval();
 				}
 				else if(intervalRunning){
-					console.log('Interval Ended');
-					clearInterval(interval);
-					intervalRunning = false;
+					stopInterval();
 				}
 			});
 		});
