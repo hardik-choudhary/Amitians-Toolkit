@@ -17,13 +17,14 @@ function fillForm(data) {
 
 	document.querySelector('#FeedbackRating_Comments').value = data.tt_comment;
 	
-	document.querySelector('#btnSubmit[type="submit"]').click();
+	if (confirm("Do you want to submit?") == true) {
+		document.querySelector('#btnSubmit[type="submit"]').click();
+		console.log('Done!!');
+	}
 	
-	console.log('Kam ho gaya!!');
 	setTimeout(function(){
 		startInterval();
-	}, 1000);
-	
+	}, 500);
 };
 
 function start(){
