@@ -16,14 +16,16 @@ function fillForm(data) {
 	}
 
 	document.querySelector('#FeedbackRating_Comments').value = data.tt_comment;
-	
-	if (confirm("Do you want to submit?") == true) {
-		document.querySelector('#btnSubmit[type="submit"]').click();
-		console.log('Done!!');
-	}
-	
+
 	setTimeout(function(){
-		startInterval();
+		if (confirm("Do you want to submit automatically?") == true) {
+			document.querySelector('#btnSubmit[type="submit"]').click();
+			console.log('Done!!');
+		}
+		
+		setTimeout(function(){
+			startInterval();
+		}, 500);
 	}, 500);
 };
 
